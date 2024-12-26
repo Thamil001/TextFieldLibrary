@@ -25,7 +25,7 @@ fun NavigationSystem() {
     ) {
         composable("home") { Home(controller) }
         composable("next") { Next(controller) }
-        composable("TextField") { TextFielder(controller) }
+        composable("basicTextField") { BasicTextFieldImplementation(controller) }
     }
 }
 
@@ -48,7 +48,7 @@ fun Next(navController: NavController) {
         modifier = Modifier
             .fillMaxSize()
             .background(Color.Yellow)
-            .clickable(onClick = { navController.navigate("home") })
+            .clickable(onClick = { navController.navigate("basicTextField") })
     ) {
 
     }
