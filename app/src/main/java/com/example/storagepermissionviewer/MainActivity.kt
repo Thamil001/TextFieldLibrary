@@ -31,7 +31,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-
 @Composable
 fun TextFielder(navController: NavController) {
     var textFieldValue: String = remember { mutableStateOf("").toString() }
