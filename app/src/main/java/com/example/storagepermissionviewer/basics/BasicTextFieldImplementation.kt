@@ -1,19 +1,22 @@
-package com.example.storagepermissionviewer
+package com.example.storagepermissionviewer.basics
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -43,7 +46,7 @@ fun BasicTextFieldImplementation(navController: NavController) {
             onValueChange = { textValue.value = it },
             modifier = Modifier
                 .fillMaxWidth()
-                .height(60.dp)
+                .height(56.dp)
                 .padding(5.dp)
                 .clip(shape = RoundedCornerShape(8.dp))
                 .background(Color.LightGray),
@@ -52,14 +55,34 @@ fun BasicTextFieldImplementation(navController: NavController) {
             visualTransformation = VisualTransformation.None,
             cursorBrush = SolidColor(Color.Black),
             keyboardOptions = KeyboardOptions.Default.copy(
-                autoCorrectEnabled = true,
-                showKeyboardOnFocus = true,
                 imeAction = ImeAction.Done
             ),
             keyboardActions = KeyboardActions(onDone = { navController.navigate("home") }),
-
-        );Unit
-
+            decorationBox = { innerTextField ->
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(56.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Box(
+                        modifier = Modifier
+                            .weight(1f)
+                            .padding(start = 10.dp),
+                        contentAlignment = Alignment.CenterStart
+                    ) {
+                        innerTextField()
+                    }
+                    Icon(
+                        imageVector = Icons.Default.Search,
+                        contentDescription = "Search Icon",
+                        modifier = Modifier
+                            .size(24.dp)
+                            .padding(end = 10.dp),
+                        tint = Color.Gray
+                    )
+                }
+            }
+        )
     }
-
 }

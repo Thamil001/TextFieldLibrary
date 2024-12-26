@@ -1,4 +1,4 @@
-package com.example.storagepermissionviewer
+package com.example.storagepermissionviewer.basics
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
