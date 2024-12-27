@@ -57,7 +57,7 @@ fun BasicTextFieldImplementation(navController: NavController) {
             keyboardOptions = KeyboardOptions.Default.copy(
                 imeAction = ImeAction.Done
             ),
-            keyboardActions = KeyboardActions(onDone = { navController.navigate("home") }),
+            keyboardActions = KeyboardActions(onDone = { navController.navigate("basicApiCalling") }),
             decorationBox = { innerTextField ->
                 Row(
                     modifier = Modifier

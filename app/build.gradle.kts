@@ -58,5 +58,12 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation("androidx.navigation:navigation-compose:2.8.5")
+    implementation("androidx.compose.ui:ui:1.5.1") // Latest Compose version
+    implementation("androidx.compose.material:material:1.5.1")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1") // For lifecycle support
+    implementation("io.ktor:ktor-client-core:3.0.3") // Ktor Client
+    implementation("io.ktor:ktor-client-cio:3.0.3") // CIO engine
+    implementation("io.ktor:ktor-client-serialization:3.0.3") // JSON serialization
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
 
 }

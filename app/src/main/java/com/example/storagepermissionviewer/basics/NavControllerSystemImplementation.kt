@@ -12,9 +12,10 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.storagepermissionviewer.KtorClient.AddNumbersScreen
 
 //This NavController start destination start the application to next to go another screen control the System
-@Preview
+
 @Composable
 fun NavigationSystem() {
     val controller = rememberNavController()
@@ -26,6 +27,8 @@ fun NavigationSystem() {
         composable("home") { Home(controller) }
         composable("next") { Next(controller) }
         composable("basicTextField") { BasicTextFieldImplementation(controller) }
+        composable("basicApiCalling") { AddNumbersScreen(controller) }
+
     }
 }
 
